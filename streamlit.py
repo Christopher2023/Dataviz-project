@@ -86,16 +86,3 @@ ax.set_ylabel('Moyenne de surface de terrain')
 ax.set_xlabel('Type de local')
 ax.set_title('Moyenne $de surface terrain par type de local')
 plt.show()
-
-test = df.groupby(pd.Grouper(key='date_mutation',freq='M')).size()
-y = []
-for i in range(12):
-    y.append(test[i])
-print(y)
-fig = plt.figure()
-ax = fig.add_axes([0,0,1,1])
-ax.bar(test.index,y,width=0.5)
-ax.set_ylabel('Moyenne du nombre de surface de terrain')
-ax.set_xlabel('Type de local')
-ax.set_title('Moyenne du nombre de surface terrain par type de local')
-plt.show()
