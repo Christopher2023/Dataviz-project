@@ -25,9 +25,8 @@ def dataframe():
   return chart_data
 
 chart_data = dataframe()
+chart_data
 
-if st.sidebar.checkbox('Afficher le dataframe'):
-  chart_data
 if st.sidebar.checkbox('Afficher les analyses'):
   st.title("Analyse des achats en fonction des départements")
   test = df.groupby(df['code_departement'],as_index = False).size()
