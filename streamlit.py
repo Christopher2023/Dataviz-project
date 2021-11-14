@@ -125,4 +125,4 @@ a = pd.DataFrame(df[["latitude","longitude"]])
 a = a.rename(columns={"latitude":"lat","longitude":"lon"}
 
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
-  st.map(a)
+             st.map(a)
