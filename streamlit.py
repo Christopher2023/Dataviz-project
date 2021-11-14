@@ -18,7 +18,7 @@ def dataframe():
 chart_data = dataframe()
 
 df["date_mutation"] = pd.to_datetime(df["date_mutation"])
-hist_values = np.histogram(df["date_mutation"].dt.day, bins=30, range=(0.5,30.5))[0]
+hist_values = np.histogram(df["date_mutation"].dt.Month, bins=12, range=(0.5,12.5))[0]
 st.bar_chart(hist_values)
 st.line_chart(hist_values)
 
