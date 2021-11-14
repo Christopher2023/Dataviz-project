@@ -140,5 +140,5 @@ if st.sidebar.checkbox('Afficher les analyses spatiales'):
   plt.hist(df['latitude'], bins = 100, range = (-21.4, 51.1), color = 'r', label = 'Latitude')
   plt.legend(loc = 'upper left')
   plt.show()
-  st.pyplot(fig)
+  st.pyplot(fig) 
   
