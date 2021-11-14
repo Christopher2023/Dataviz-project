@@ -5,9 +5,9 @@ import math
 import sweetviz as sv
 
 df = pd.read_csv('modified_df.csv')
-chart_data = pd.read_csv('modified_df.csv')
+chart_data = df.head(100)
 
-chart_data.head(100)
+chart_data
 
 test = df.groupby(df['code_departement'],as_index = False).size()
 fig = plt.figure()
