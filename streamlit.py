@@ -9,6 +9,7 @@ import streamlit as st
 df = pd.read_csv('modified_df.csv')
 
 st.sidebar.title("Navigation Bar")
+choice = st.sidebar.selectbox('Que souhaitez vous observer ?',('Dataframe','Analysis'))
 
 @st.cache(suppress_st_warning=True)
 def dataframe():
