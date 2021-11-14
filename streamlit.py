@@ -14,7 +14,7 @@ df['date_mutation'] = pd.to_datetime(df['date_mutation'])
 def mapping():
     a = pd.DataFrame(df[["latitude","longitude"]])
     a = a.rename(columns={"latitude":"lat","longitude":"lon"})
-    st.map()
+    return a
 
     
 st.sidebar.title("Navigation Bar")
@@ -130,7 +130,7 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
   st.title("Analyses spatiales")
   
-  mapping()
+  st.map(mapping())
   
   fig = plt.figure()
   plt.hist(df['longitude'], bins = 100, range = (-63.2, 55.9), color = 'g', alpha = 0.5, label = 'Longitude')
