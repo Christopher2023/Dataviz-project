@@ -120,3 +120,8 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
   hist_values = np.histogram(df['date_mutation'].dt.month, bins=12, range=(0.5,12.5))[0]
   st.bar_chart(hist_values)
   st.line_chart(hist_values)
+
+if st.sidebar.checkbox('Afficher les analyses temporelles'):
+  a = pd.DataFrame(df[["latitude","longitude"]])
+  a = a.rename(columns={"latitude":"lat","longitude":"lon"}
+  st.map(a)
