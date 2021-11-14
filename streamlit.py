@@ -4,6 +4,7 @@ import numpy as np
 import math
 import sweetviz as sv
 import streamlit as st
+import seaborn as sns
 
 
 df = pd.read_csv('modified_df.csv')
@@ -119,3 +120,5 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
   hist_values = np.histogram(df['date_mutation'].dt.month, bins=12, range=(0.5,12.5))[0]
   st.bar_chart(hist_values)
   st.line_chart(hist_values)
+  df2 = df.groupby(['weekday', 'hour']).apply(count_rows).unstack()
+  chart_data = df2.head(30)
