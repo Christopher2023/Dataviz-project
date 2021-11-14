@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 import sweetviz as sv
+import streamlit as st
 
 df = pd.read_csv('modified_df.csv')
 chart_data = df.head(100)
@@ -17,6 +18,7 @@ ax.set_ylabel("Nombre d'achats")
 ax.set_xlabel('Départements')
 ax.set_title("Nombre d'achats par departement")
 plt.show()
+st.pyplot(fig)
 
 test = df.groupby(df['code_departement'],as_index = False)['valeur_fonciere'].mean()
 fig = plt.figure()
