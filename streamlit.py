@@ -5,9 +5,11 @@ import math
 import sweetviz as sv
 import streamlit as st
 
+
+df = pd.read_csv('modified_df.csv')
+
 @st.cache(suppress_st_warning=True)
 def dataframe():
-  df = pd.read_csv('modified_df.csv')
   chart_data = df.head(100)
   return chart_data
 
