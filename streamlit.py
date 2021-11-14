@@ -129,9 +129,10 @@ if st.sidebar.checkbox('Afficher les analyses spatiales'):
   st.map(a)
   
   fig = plt.figure()
-  plt.hist(df['Lon'], bins = 100, range = (-74.1, -73.9), color = 'g', alpha = 0.5, label = 'Longitude')
+  plt.hist(df['longitude'], bins = 100, range = (-74.1, -73.9), color = 'g', alpha = 0.5, label = 'Longitude')
   plt.legend(loc = 'best')
   plt.twiny()
-  plt.hist(df['Lat'], bins = 100, range = (40.5, 41), color = 'r', label = 'Latitude')
+  plt.hist(df['latitude'], bins = 100, range = (40.5, 41), color = 'r', label = 'Latitude')
   plt.legend(loc = 'upper left')
   plt.show()
+  st.pyplot(fig)
