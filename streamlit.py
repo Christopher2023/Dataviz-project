@@ -126,6 +126,8 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
   st.line_chart(hist_values)
 
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
+  st.title("Analyses spatiales")
+  
   st.map(a)
   
   fig = plt.figure()
