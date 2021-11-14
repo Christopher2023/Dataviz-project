@@ -127,4 +127,3 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
 
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
   st.map(a)
-  st.bar_chart(a)
