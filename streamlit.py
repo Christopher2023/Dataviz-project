@@ -13,8 +13,6 @@ df['date_mutation'] = pd.to_datetime(df['date_mutation'])
 a = pd.DataFrame(df[["latitude","longitude"]])
 a = a.rename(columns={"latitude":"lat","longitude":"lon"})
 
-d = grouping(df)
-d = d[["Lat","Lon"]]
     
 st.sidebar.title("Navigation Bar")
 
@@ -129,4 +127,4 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
 
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
   st.map(a)
-  st.bar_chart(d)
+  st.bar_chart(a)
