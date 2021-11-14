@@ -136,3 +136,10 @@ if st.sidebar.checkbox('Afficher les analyses spatiales'):
   plt.legend(loc = 'upper left')
   plt.show()
   st.pyplot(fig)
+    
+  fig = plt.figure(figsize = (20, 20))
+  plt.scatter(df.Lat, df.Lon)
+  plt.xlabel('Latitude')
+  plt.ylabel('Longitude')
+  plt.show()
+  st.pyplot(fig)
