@@ -8,9 +8,11 @@ import streamlit as st
 
 df = pd.read_csv('modified_df.csv')
 
+st.sidebar.title("Navigation Bar")
+
 @st.cache(suppress_st_warning=True)
 def dataframe():
-  chart_data = df.head(100)
+  chart_data = df.head(1000)
   return chart_data
 
 chart_data = dataframe()
