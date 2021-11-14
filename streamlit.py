@@ -138,7 +138,7 @@ if st.sidebar.checkbox('Afficher les analyses spatiales'):
   st.pyplot(fig)
     
   fig = plt.figure(figsize = (20, 20))
-  plt.scatter(df.Lat, df.Lon)
+  plt.scatter(df.latitude, df.longitude)
   plt.xlabel('Latitude')
   plt.ylabel('Longitude')
   plt.show()
