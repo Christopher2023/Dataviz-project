@@ -41,6 +41,7 @@ if st.sidebar.checkbox('Afficher les analyses'):
   plt.show()
   st.pyplot(fig)
 
+  st.title ("Analyse en fonction des caractéristiques du logement")
   test = df.groupby(df['nombre_pieces_principales'],as_index = False)['valeur_fonciere'].mean()
   fig = plt.figure()
   ax = fig.add_axes([0,0,1,1])
