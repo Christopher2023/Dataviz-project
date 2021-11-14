@@ -11,6 +11,7 @@ def dataframe():
   chart_data = df.head(100)
   return chart_data
 
+chart_data = dataframe()
 chart_data
 
 test = df.groupby(df['code_departement'],as_index = False).size()
