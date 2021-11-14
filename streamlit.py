@@ -41,7 +41,7 @@ if st.sidebar.checkbox('Afficher les analyses'):
   plt.show()
   st.pyplot(fig)
 
-  st.title ("Analyse en fonction des caractéristiques du logement")
+  st.title ("Analyse des achats en fonction des caractéristiques du logement")
   test = df.groupby(df['nombre_pieces_principales'],as_index = False)['valeur_fonciere'].mean()
   fig = plt.figure()
   ax = fig.add_axes([0,0,1,1])
@@ -72,6 +72,7 @@ if st.sidebar.checkbox('Afficher les analyses'):
   plt.show()
   st.pyplot(fig)
 
+  st.title ("Analyse des achats en fonction du point de vue du type de local")
   test = df.groupby(df['type_local'],as_index = False).size()
   fig = plt.figure()
   ax = fig.add_axes([0,0,1,1])
