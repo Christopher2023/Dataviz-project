@@ -11,7 +11,7 @@ df = pd.read_csv('modified_df.csv')
 df['date_mutation'] = pd.to_datetime(df['date_mutation'])
 
 a = pd.DataFrame(df[["latitude","longitude"]])
-a = a.rename(columns={"latitude":"lat","longitude":"lon"}
+a = a.rename(columns={"latitude":"lat","longitude":"lon"})
 
 st.sidebar.title("Navigation Bar")
 
