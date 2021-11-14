@@ -10,6 +10,9 @@ import seaborn as sns
 df = pd.read_csv('modified_df.csv')
 df['date_mutation'] = pd.to_datetime(df['date_mutation'])
 
+a = pd.DataFrame(df[["latitude","longitude"]])
+a = a.rename(columns={"latitude":"lat","longitude":"lon"}
+
 st.sidebar.title("Navigation Bar")
 
 @st.cache(suppress_st_warning=True)
@@ -120,9 +123,6 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
   hist_values = np.histogram(df['date_mutation'].dt.month, bins=12, range=(0.5,12.5))[0]
   st.bar_chart(hist_values)
   st.line_chart(hist_values)
-  
-a = pd.DataFrame(df[["latitude","longitude"]])
-a = a.rename(columns={"latitude":"lat","longitude":"lon"}
 
 if st.sidebar.checkbox('Afficher les analyses spatiales'):
-             st.map(a)
+  st.map(a)
