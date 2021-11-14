@@ -137,7 +137,7 @@ if st.sidebar.checkbox('Afficher les analyses spatiales'):
   plt.show()
   st.pyplot(fig)
     
-  plt.figure(figsize = (20, 20))
+  plt.figure()
   plt.plot(df.longitude, df.latitude, '.', ms = 2, alpha = .5)
   plt.xlim(-63.2, 55.9)
   plt.ylim(-21.4, 51.1)
