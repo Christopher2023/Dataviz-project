@@ -116,8 +116,8 @@ if st.sidebar.checkbox('Afficher les analyses'):
 
 if st.sidebar.checkbox('Afficher les analyses temporelles'):
   df2 = df
-  df2 = df2.set_index('date_mutation')
+  df2 = df2.set_index('date_mutation'.month)
   st.title("Analyse des achats en fonction de la période de l'année")
-  hist_values = np.histogram(df2['date_mutation'].dt.month, bins=12, range=(0.5,12.5))[0]
+  hist_values = np.histogram(df2, bins=12, range=(0.5,12.5))[0]
   st.bar_chart(hist_values)
   st.line_chart(hist_values)
