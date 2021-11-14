@@ -7,6 +7,7 @@ import streamlit as st
 
 
 df = pd.read_csv('modified_df.csv')
+df['date_mutation'] = pd.to_datetime(df['date_mutation'])
 
 st.sidebar.title("Navigation Bar")
 
@@ -16,11 +17,6 @@ def dataframe():
   return chart_data
 
 chart_data = dataframe()
-
-df["date_mutation"] = pd.to_datetime(df["date_mutation"])
-hist_values = np.histogram(df["date_mutation"].dt.month, bins=12, range=(0.5,12.5))[0]
-st.bar_chart(hist_values)
-st.line_chart(hist_values)
 
 if st.sidebar.checkbox('Afficher le dataframe'):
   chart_data
@@ -117,3 +113,8 @@ if st.sidebar.checkbox('Afficher les analyses'):
   ax.set_title('Moyenne $de surface terrain par type de local')
   plt.show()
   st.pyplot(fig)
+
+if st.sidebar.checkbox('Afficher les analyses temporelles'):
+  hist_values = np.histogram(df['date_mutation'].dt.day, bins=12, range=(0.5,12.5))[0]
+  st.bar_chart(hist_values)
+  st.line_chart(hist_values)
