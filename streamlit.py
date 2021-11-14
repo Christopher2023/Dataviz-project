@@ -20,7 +20,7 @@ chart_data = dataframe()
 if st.sidebar.checkbox('Afficher le dataframe'):
   chart_data
 if st.sidebar.checkbox('Afficher les analyses'):
-  
+  analysis()
 
 def analysis():
   test = df.groupby(df['code_departement'],as_index = False).size()
