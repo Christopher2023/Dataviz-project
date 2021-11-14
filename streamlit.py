@@ -120,5 +120,5 @@ if st.sidebar.checkbox('Afficher les analyses temporelles'):
   hist_values = np.histogram(df['date_mutation'].dt.month, bins=12, range=(0.5,12.5))[0]
   st.bar_chart(hist_values)
   st.line_chart(hist_values)
-  df2 = df.groupby(['weekday', 'hour']).apply(count_rows).unstack()
-  chart_data = df2.head(30)
+  df2 = df.groupby(df['date_mutation'].dt.month, df['date_mutation'].dt.day]).apply(count_rows).unstack()
+  sns.heatmap(df2, linewidths = .5)
